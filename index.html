@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liefer'n'Go!</title>
+    <link rel="stylesheet" href="style/standard.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/fonts/fonts.css">
+    <link rel="stylesheet" href="style/responsive.css">
+    <link rel="stylesheet" href="style/fonts.css">
+    <link rel="shortcut icon" href="img/icon/just-eat-icon.png" type="image/x-icon">
+    <script src="db.js"></script>
+    <script src="template/template.js"></script>
+    <script src="script.js"></script>
+    </head>
+
+<body onload="renderDatabaseFood() , getNavbarHeaders()">
+
+    <div class="grid">
+<header>  
+ <a href="/index.html"><img src="img/icon/just-eat-icon.png" alt="Logo-Bestellapp"></a>
+Liefer'n'Go!
+</header>
+
+
+<nav id="navbar"></nav>
+
+
+
+<main id="foodContent">
+    
+    <section id="food"></section>
+        <div></div>
+        <div></div>
+</main>
+<aside >
+    <h3>Warenkorb</h3>
+    <div id="shoppingCartContainer"></div>    
+   
+   <div class="total-section">
+        <div class="subTotal price"></div>    
+        <div class="deliveryCost price"></div>
+        <div class="total price"></div>
+        <input class="submit" type="submit"  value="bestellen" onclick="submitOrder()" value="bestellen">
+   </div>
+</aside>
+
+
+
+<div id="overlay-shoppingcart" class="d_none">
+<h3>Warenkorb</h3>
+<div id="overlay"></div>
+    <div class="total-section">
+        <div class="subTotal price"></div>    
+        <div class="deliveryCost price"></div>
+        <div class="total price"></div>
+        <input  class="submit" type="submit" value="bestellen" onclick="submitOrder()">
+    </div>
+</div>
+
+<footer class="responsive-shoppingcart-navigation" onclick="showResponsiveShoppingCart()">Warenkorb</footer>
+
+
+<div class="legal-information">
+    <a href="/">Datenschutz</a>
+    <a href="/">Impressum</a>
+    </div>
+</div>
+
+<div id="modal" class="modal-container">
+    <img class="close-modal" src="img/icon/close-icon.png" alt="Button zum schließen des Fensters" onclick="closeModal()">
+   <div class="modal-content">
+    Vielen Dank! 
+    <p>Bestellung abgeschickt</p>
+    </div>
+</div>
+
+
+</body>
+</html>

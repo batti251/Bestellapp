@@ -1,0 +1,59 @@
+#foodContent{
+    grid-area: main;
+
+}
+
+.meal-container{
+    display: flex;
+    justify-content: space-between;
+    scroll-margin-top: 420px;
+}
+
+input{
+    border-radius: 1rem;
+    height: 32px;
+    width: 32px;
+    color: #F47B24 ;
+    border-color: #E9E8E7;
+    border-style: solid ;
+    cursor: pointer;
+    font-size: x-large;
+    
+}
+
+header{
+    grid-area: header;
+}
+
+
+.total-section{
+    padding: 32px 0 0 0 ;
+}
+
+.shoppingMeal{
+    display: flex;
+    justify-content: space-between;
+}
+
+aside{
+    grid-area: aside;
+}
+
+footer{
+    grid-area: footer;
+}
+
+.legal-information {
+    grid-area: legal;
+}
+
+.grid{
+    display: grid;
+    grid-template-areas: 
+    'header header header header header'
+    'nav nav nav nav nav'
+    'main main main main aside'
+    'footer footer footer footer footer'
+    'legal legal legal legal legal '
+}
+
