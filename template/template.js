@@ -2,13 +2,13 @@ function getFoodTemplate(databaseIndex) {
   let objKey = database[databaseIndex];
   return ` 
   <div id="food-container" class="${objKey.headercategory}"> <h4>${objKey.headercategory}</h4> <img class="food-img" src="img/food/img-${objKey.headercategory}.jpg" alt="${objKey.headercategory}-Gericht"></div>
-        <section id="${objKey.category}" class="meal-container">
+        <section id="${objKey.category}" class="meal-container"  onclick="toShoppingCart(${databaseIndex})">
         <div>
         <div><h4>${objKey.name}</h4></div>
         <div class="price">${objKey.price}</div>
         <div>${objKey.description}</div>
         </div>
-        <input class="icon" type="image" src="img/icon/add-icon.png"  id="${databaseIndex}button" onclick="toShoppingCart(${databaseIndex})">
+        <input class="icon" type="image" src="img/icon/add-icon.png"  id="${databaseIndex}button">
          </section>
          `;
 }

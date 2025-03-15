@@ -1,0 +1,32 @@
+input:hover {
+  border-color: #f47b24;
+}
+.meal-container:hover {
+  background-color: #f47b24;
+}
+
+.close-modal:hover {
+  border-color: #e9e8e7;
+  border-style: solid;
+  border-radius: 1rem;
+}
+input:active {
+  background-color: #cfcfcf;
+}
+
+.close-modal:active {
+  background-color: #e9e8e7;
+}
+
+.meal-container:active {
+  background-color: #e9e8e7;
+}
+
+a:visited {
+  font-style: normal;
+  color: #f47b24;
+}
+
+.legal-information a:visited {
+    color: #f5f4f4;
+}

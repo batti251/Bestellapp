@@ -1,83 +1,82 @@
+@media only screen and (max-width: 1440px) {
+  .grid {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "nav "
+      "main aside"
+      "footer footer"
+      "law law";
+  }
 
-@media only screen and (max-width: 1440px){
-    .grid{
-        display: grid;
-        grid-template-areas: 
-        'header header'
-        'nav '
-        'main aside'
-        'footer footer'  
-        'law law'
-    }
+  .grid > nav {
+    display: flex;
+    align-items: center;
+    padding: 16px 16px 16px 16px;
+    margin: 0 16px 16px 16px;
+    overflow-x: scroll;
+    height: 64px;
+    width: 640px;
+    list-style-type: none;
+  }
 
+  #food-container {
+    margin: 16px 16px 16px 16px;
+    padding: 16px 16px 16px 16px;
+  }
 
-    .grid > nav {
-        display: flex;
-        align-items: center;
-        padding: 16px 16px 16px 16px;
-        margin: 0 16px 16px 16px;
-        overflow-x: scroll;
-        height: 64px;
-        width: 640px;
-        list-style-type: none; 
-    }
-
-    #food-container{
-        margin: 16px 16px 16px 16px;
-        padding: 16px 16px 16px 16px;
-      }
-
-    .grid > main > section{
-        margin: 16px 16px 16px 16px;
-        padding: 16px 16px 16px 16px;
-        max-width: 640px;
-
-    }
-
-
+  .grid > main > section {
+    margin: 16px 16px 16px 16px;
+    padding: 16px 16px 16px 16px;
+    max-width: 640px;
+  }
 }
-@media only screen and (max-width: 1140px){
-    .grid > aside {
-        width: 240px;   
-    }
-
+@media only screen and (max-width: 1140px) {
+  .grid > aside {
+    width: 240px;
+  }
 }
 
+@media only screen and (min-width:992px){
+    #overlay-shoppingcart{
+        display: none;
+    }
+}
 
-
-@media only screen and (max-width: 992px){
-.grid{
+@media only screen and (max-width: 992px) {
+  .grid {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-}
+  }
 
-.grid > nav{
-    margin: 16px 0px 16px 0px;
+  .grid > nav {
+    margin: 0 0px 16px 0;
     width: -webkit-fill-available;
-    }
+  }
 
+  .grid > aside {
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100vw;
+    margin: 0;
+    justify-content: space-evenly;
+    border: 0;
+    border-radius: 0;
+    margin: 0;
+    padding: 16px 16px 16px 16px;
+  }
 
-.grid > aside {
-  display: none;
-  position: fixed;
-  height: 100%;
-  width: 100vw;
-  margin: 0;
-  justify-content: space-evenly;
-  border: 0;
-  border-radius: 0;
-  margin: 0;
-  padding: 16px 16px 16px 16px;
+  .shoppingMeal {
+    width: 400px;
+  }
 
-}
+  .align-buttons{
+    width: 400px;
+  }
 
-.shoppingMeal{
-    justify-content: stretch;
-}
-
-.responsive-shoppingcart-navigation{
+  .responsive-shoppingcart-navigation {
     display: grid;
     overflow: hidden;
     position: fixed;
@@ -86,63 +85,50 @@
     height: 64px;
     text-align: center;
     margin-top: 48px;
-}
+  }
 
-.grid > footer {
+  .grid > footer {
     visibility: visible;
     background-color: rgb(47, 67, 180);
     color: #fcfcfc;
-}
-#overlay-shoppingcart{
+    align-content: center;
+  }
+  #overlay-shoppingcart {
     position: fixed;
-    height: 100%;
-    width:     -webkit-fill-available;
+    height: 90%;
+    width: -webkit-fill-available;
     margin: 0;
     justify-content: space-evenly;
     border: 0;
     border-radius: 0;
-    padding: 16px 16px 16px 16px; 
+    padding: 16px 16px 16px 16px;
     background-color: #fcfcfc;
+    z-index: 2;
+  }
 
+  .grid > .legal-information {
+    height: 120px;
+  }
 }
 
-}
-
-@media only screen and (max-width: 768px){
-
-.grid > nav{
-
-
+@media only screen and (max-width: 768px) {
+  .grid > nav {
     margin: 16px 0px 16px 0px;
     width: -webkit-fill-available;
-}
+  }
 
-.grid > main {
+  .grid > main {
     max-width: 500px;
+  }
 }
 
+@media only screen and (max-width: 600px) {
+  .grid > nav {
+    margin: 16px 0px 16px 0px;
+    width: -webkit-fill-available;
+  }
 
-
+  .grid > main {
+    max-width: 400px;
+  }
 }
-
-
-
-
-
-@media only screen and (max-width: 600px){
-
-
-    .grid > nav{
-
-        margin: 16px 0px 16px 0px;
-        width: -webkit-fill-available;
-    }
-    
-    .grid > main {
-    
-        max-width: 400px
-    }
-
-    
-    }
-
