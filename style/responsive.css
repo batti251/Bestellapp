@@ -39,8 +39,9 @@
 
 @media only screen and (min-width:992px){
     #overlay-shoppingcart{
-        display: none;
-    }
+    display: none;
+
+  }
 }
 
 @media only screen and (max-width: 992px) {
@@ -69,7 +70,7 @@
   }
 
   .shoppingMeal {
-    width: 400px;
+    width: 350px;
   }
 
   .align-buttons{
@@ -129,6 +130,6 @@
   }
 
   .grid > main {
-    max-width: 400px;
+    max-width: 320px;
   }
 }
