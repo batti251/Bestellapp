@@ -7,7 +7,7 @@ let database = [
     price: 8.99,
     amount: 1,
     category: "Pizza",
-    headercategory: "Pizza"
+    headercategory: "Pizza",
   },
   {
     mealIndex: 1,
@@ -49,7 +49,7 @@ let database = [
     price: 8.99,
     amount: 1,
     category: "Chinesisch",
-        headercategory: "Chinesisch"
+    headercategory: "Chinesisch",
   },
   {
     mealIndex: 6,
@@ -95,7 +95,7 @@ let database = [
     price: 7.99,
     amount: 1,
     category: "Burger",
-            headercategory: "Burger"
+    headercategory: "Burger",
   },
   {
     mealIndex: 11,
@@ -141,7 +141,7 @@ let database = [
     price: 9.99,
     amount: 1,
     category: "Nudelgerichte",
-            headercategory: "Nudelgerichte"
+    headercategory: "Nudelgerichte",
   },
   {
     mealIndex: 16,
@@ -184,7 +184,7 @@ let database = [
     price: 6.99,
     amount: 1,
     category: "Frühstück",
-            headercategory: "Frühstück"
+    headercategory: "Frühstück",
   },
   {
     mealIndex: 26,
@@ -225,7 +225,7 @@ let database = [
     price: 5.99,
     amount: 1,
     category: "Dessert",
-            headercategory: "Dessert"
+    headercategory: "Dessert",
   },
   {
     mealIndex: 21,
@@ -260,7 +260,6 @@ let database = [
     category: "Dessert",
   },
 
-
   {
     mealIndex: 30,
     name: "Gegrilltes Lachsfilet",
@@ -268,7 +267,7 @@ let database = [
     price: 14.99,
     amount: 1,
     category: "Fischgerichte",
-            headercategory: "Fischgerichte"
+    headercategory: "Fischgerichte",
   },
   {
     mealIndex: 31,
@@ -313,7 +312,7 @@ let database = [
     price: 9.99,
     amount: 1,
     category: "Vegetarisch",
-            headercategory: "Vegetarisch"
+    headercategory: "Vegetarisch",
   },
   {
     mealIndex: 36,
@@ -357,7 +356,7 @@ let database = [
     price: 6.99,
     amount: 1,
     category: "Street Food",
-            headercategory: "Street Food"
+    headercategory: "Street Food",
   },
   {
     mealIndex: 41,
@@ -401,7 +400,7 @@ let database = [
     price: 7.99,
     amount: 1,
     category: "Mediterran",
-            headercategory: "Mediterran"
+    headercategory: "Mediterran",
   },
   {
     mealIndex: 46,
@@ -445,7 +444,7 @@ let database = [
     price: 11.99,
     amount: 1,
     category: "Indisch",
-            headercategory: "Indisch"
+    headercategory: "Indisch",
   },
   {
     mealIndex: 51,
@@ -488,7 +487,7 @@ let database = [
     price: 22.99,
     amount: 1,
     category: "Steaks & Grillgerichte",
-            headercategory: "Steaks & Grillgerichte"
+    headercategory: "Steaks & Grillgerichte",
   },
   {
     mealIndex: 56,
@@ -532,7 +531,7 @@ let database = [
     price: 8.99,
     amount: 1,
     category: "Suppen & Eintöpfe",
-            headercategory: "Suppen & Eintöpfe"
+    headercategory: "Suppen & Eintöpfe",
   },
   {
     mealIndex: 61,
@@ -574,7 +573,7 @@ let database = [
     price: 5.99,
     amount: 1,
     category: "Tapas & Vorspeisen",
-            headercategory: "Tapas & Vorspeisen"
+    headercategory: "Tapas & Vorspeisen",
   },
   {
     mealIndex: 66,
@@ -617,7 +616,7 @@ let database = [
     price: 7.99,
     amount: 1,
     category: "Wraps & Sandwiches",
-            headercategory: "Wraps & Sandwiches"
+    headercategory: "Wraps & Sandwiches",
   },
   {
     mealIndex: 71,
@@ -653,7 +652,7 @@ let database = [
     amount: 1,
     category: "Wraps & Sandwiches",
   },
- 
+
   {
     mealIndex: 75,
     name: "Coca-Cola 0,5L",
@@ -661,7 +660,7 @@ let database = [
     price: 2.49,
     amount: 1,
     category: "Getränke",
-            headercategory: "Getränke"
+    headercategory: "Getränke",
   },
   {
     mealIndex: 76,

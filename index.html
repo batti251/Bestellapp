@@ -12,18 +12,18 @@
     <link rel="stylesheet" href="style/pseudo-classes.css">
     <link rel="stylesheet" href="style/fonts.css">
     <link rel="shortcut icon" href="img/icon/just-eat-icon.png" type="image/x-icon">
-    <script src="db.js"></script>
+    <script src="db/db.js"></script>
     <script src="template/template.js"></script>
-    <script src="script.js"></script>
+    <script src="script/script.js"></script>
     </head>
 
-<body onload="renderDatabaseFood() , getNavbarHeaders()">
+<body onload="renderDatabaseFood() , getNavbarHeaders() , renderAll()">
 
     <div class="grid">
 <header>  
   
 <section class="header-section-top">
-    <a  href="/index.html"><img class="logo-icon" src="img/icon/just-eat-icon.png" alt="Logo-Bestellapp"></a>
+    <a  href="index.html"><img class="logo-icon" src="img/icon/just-eat-icon.png" alt="Logo-Bestellapp"></a>
 </section>
 <section class="header-section-middle"><img class="hero" src="img/icon/lieferngo-hero.jpg" alt="Cover Liefer'n'Go!">
     <img class="logo-icon-hero" src="img/icon/icon-hero.png" alt="Logo-Bestellapp">
@@ -46,14 +46,16 @@
         <div></div>
         <div></div>
 </main>
+
+
 <aside >
     <h3>Warenkorb</h3>
     <div id="shoppingCartContainer"></div>    
    
    <div class="total-section">
-        <div class="subTotal price"></div>    
-        <div class="deliveryCost price"></div>
-        <div class="total price"></div>
+        <div class="subTotal price">Zwischensumme: </div>    
+        <div class="deliveryCost price">Lieferkosten:</div>
+        <div class="total price">Gesamtsumme:</div>
         <input class="submit" type="submit"  value="bestellen" onclick="submitOrder()" value="bestellen">
    </div>
 </aside>

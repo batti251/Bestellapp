@@ -1,5 +1,3 @@
-//console.table(database);
-
 function renderDatabaseFood(){
 
     let databaseRef = document.getElementById(`foodContent`);
@@ -24,9 +22,14 @@ function toShoppingCart(databaseIndex) {
       newItem.price = database[databaseIndex].price;
       shoppingCartDatabase.push(newItem);
   }
-  renderShoppingCart()  
-  renderOverlay()
-  shoppingCartTotal()
+  saveShoppingCartStorage()
+  renderAll()
+}
+
+function renderAll(){
+  renderShoppingCart();  
+  renderOverlay();
+  shoppingCartTotal();
 }
 
 function triggerButton(button){
@@ -37,24 +40,18 @@ const foundItem = shoppingCartDatabase.find(item => {
   if (foundItem) {
     foundItem.amount += trigger;
     foundItem.price = foundItem.amount * database[buttonIndex].price;
-     
-      if (foundItem.amount < 1){
+     if (foundItem.amount < 1){
         shoppingCartDatabase = shoppingCartDatabase.filter((item) => {
           return item.amount >=1
         })
       }
     }
-renderShoppingCart()
-renderOverlay()
-shoppingCartTotal()
+    saveShoppingCartStorage()
+    renderAll()
 }
-
 
 function deleteButton(button){
   let deleteIndex = parseInt(button.dataset.mealindex)
-  let deleteTrigger = parseInt(button.dataset.value)
-  console.log(deleteIndex);
-  console.log(deleteTrigger); 
   const findDeleteItem = shoppingCartDatabase.find(item => {
     return item.mealIndex === deleteIndex})
     if (findDeleteItem){
@@ -62,17 +59,13 @@ function deleteButton(button){
       shoppingCartDatabase = shoppingCartDatabase.filter((item) => {
         return item.amount >=1})
         }
-renderShoppingCart()
-renderOverlay()
-shoppingCartTotal()
+removeShoppingCartStorage()
+renderAll()
 }
-
-
 
 function shoppingCartTotal() {
   let subTotal = 0;
   let deliveryCost = 2;
-  let nodeList = document.querySelectorAll('.total-section');
   let nodeListSubTotal =  document.querySelectorAll('.subTotal') 
   let nodeListDeliveryCost = document.querySelectorAll('.deliveryCost') 
   let nodeListTotal = document.querySelectorAll('.total')
@@ -80,17 +73,21 @@ function shoppingCartTotal() {
     subTotal += shoppingCartDatabase[i].price;
     }   
   if (shoppingCartDatabase.length <1){
-    deliveryCost = 0
-  } 
-  let totalPrice = subTotal + deliveryCost;
-for (let index = 0; index < nodeList.length; index++) {
-  nodeListSubTotal[index].innerHTML = subTotal;
-  nodeListDeliveryCost[index].innerHTML =  deliveryCost ;
-  nodeListTotal[index].innerHTML = totalPrice ;
-  
-  }
-  localCurrency()
+    deliveryCost = 0;
+    } 
+  setTotal(subTotal, deliveryCost, nodeListSubTotal , nodeListDeliveryCost, nodeListTotal);
+  localCurrency();
   renderTotal(nodeListSubTotal , nodeListDeliveryCost, nodeListTotal)
+}
+
+function setTotal(subTotal, deliveryCost, nodeListSubTotal , nodeListDeliveryCost, nodeListTotal){
+  let totalPrice = subTotal + deliveryCost;
+  let nodeList = document.querySelectorAll('.total-section');
+  for (let index = 0; index < nodeList.length; index++) {
+    nodeListSubTotal[index].innerHTML = subTotal;
+    nodeListDeliveryCost[index].innerHTML =  deliveryCost ;
+    nodeListTotal[index].innerHTML = totalPrice ;
+      }
 }
 
 function renderTotal(nodeListSubTotal , nodeListDeliveryCost, nodeListTotal){
@@ -105,17 +102,16 @@ function renderTotal(nodeListSubTotal , nodeListDeliveryCost, nodeListTotal){
   }
 }  
 
-
-
 function renderShoppingCart() {
+  getShoppingCartStorage()
   let shoppingCartRef = document.getElementById('shoppingCartContainer');
   shoppingCartRef.innerHTML = "";
   for (let shoppingCartIndex = 0; shoppingCartIndex < shoppingCartDatabase.length; shoppingCartIndex++) {
     shoppingCartRef.innerHTML += getShoppingCartTemplate(shoppingCartIndex);
 }
-localCurrency()
+shoppingCartTotal() 
+saveShoppingCartStorage() 
 }
-
 
 function getNavbarHeaders(){
 let navbarSlide = document.getElementById('navbar')
@@ -128,13 +124,13 @@ navbarSlide.innerHTML += getNavbarTemplate(headerCategoryObj.headercategory)
 }
 }
 
-
 function showResponsiveShoppingCart() {
   let x = document.getElementById('overlay-shoppingcart')
   x.classList.toggle('d_none')
 }
 
 function getOverlay(){
+  getShoppingCartStorage()
   renderOverlay()
 }
 
@@ -145,6 +141,7 @@ function renderOverlay() {
     shoppingCartRef.innerHTML += getShoppingCartTemplate(shoppingCartIndex);
 }
 localCurrency()
+shoppingCartTotal()
 }
 
 function localCurrency() {
@@ -161,18 +158,17 @@ function localCurrency() {
 
 function submitOrder() {
   let modalRef = document.getElementById('modal')
-  
-  if (shoppingCartDatabase.length != 0){
+    if (shoppingCartDatabase.length != 0){
     modalRef.style.visibility = "visible";
   } else {
    }
 shoppingCartDatabase = shoppingCartDatabase.filter((item) => {
   return item.mealIndex < 0
 })
- 
-  renderShoppingCart()
-  renderOverlay()
-  shoppingCartTotal()
+
+removeShoppingCartStorage();
+showResponsiveShoppingCart();
+renderAll();
 }
 
 function closeModal(){
@@ -180,3 +176,17 @@ function closeModal(){
   closeModalRef.style.visibility = "hidden";
 }
 
+function saveShoppingCartStorage() {
+  localStorage.setItem("shoppingCartDatabase",JSON.stringify(shoppingCartDatabase))
+}
+
+function getShoppingCartStorage() {
+  let storageRef = JSON.parse(localStorage.getItem("shoppingCartDatabase"))
+  if (storageRef != null){
+    shoppingCartDatabase = storageRef
+  }
+}
+
+function removeShoppingCartStorage() {
+  localStorage.removeItem("shoppingCartDatabase",JSON.stringify(shoppingCartDatabase))
+}
